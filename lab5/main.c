@@ -10,7 +10,7 @@ int main(int argc, char* argv[] )
 
     /* check that the correct number of arguments has been read
      */
-    if(argc != NUMARGS)
+    if(argc != NUMARGS + 1)
     {
         fprintf(stderr, "Error: invalid arguments passed in.\n");
         print_usage();
