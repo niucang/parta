@@ -7,7 +7,7 @@
 /* the position of each argument in the argv array */
 enum arg_position
 {
-    IN, OUT
+    IN = 1, OUT
 };
 
 void print_usage(void);

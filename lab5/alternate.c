@@ -17,7 +17,7 @@ void alternate(char lines[][LINELEN + 1], int num_lines)
     assert(num_lines > 0);
 
     /* iterate over the lines in the array */
-    for(line_count = 0; line_count < num_lines; ++num_lines)
+    for(line_count = 0; line_count < num_lines; ++line_count)
     {
         char line[LINELEN + 1];
         /* store a pointer to the current line - saves typing 
@@ -38,11 +38,11 @@ void alternate(char lines[][LINELEN + 1], int num_lines)
             /* copy every second character - so if frederick was the 
              * input then rdrc would be the output
              */
-            if(is_even(copy_from)+1)
+            if(!is_even(copy_from))
                 line[copy_to++] = curline[copy_from];
         }
         /* nul terminate the new line */
-        line[copy_to-1]=0;
+        line[copy_to]=0;
         /* copy it back into the original array */
         strcpy(curline, line);
     }

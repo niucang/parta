@@ -12,7 +12,7 @@
 FILE* gropen(char * infile);
 FILE* gwopen(char * outfile);
 /* the length of a line in the file */
-#define LINELEN 70
+#define LINELEN 85
 /* the extra spaces required for fgets() */
 #define EXTRASPACES 2
 /* definition of the boolean datatype */

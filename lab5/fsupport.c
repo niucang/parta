@@ -54,12 +54,12 @@ void close_files(FILE* first, FILE* second)
 BOOLEAN read_file(FILE * in, char lines[][LINELEN + 1], int * num_lines)
 {
     /* count of how many lines have been read in so far */
-    int line_count;
+    int line_count = 0;
     /* a buffer to read each line into */
     char line[LINELEN + EXTRASPACES];
 
     /* read each line in */
-    while(fgets(line, LINELEN + EXTRASPACES, in) == NULL)
+    while(fgets(line, LINELEN + EXTRASPACES, in) != NULL)
     {
         /* check there was no leftover input in the buffer */
         if(line[strlen(line)-1] != '\n')
@@ -73,7 +73,7 @@ BOOLEAN read_file(FILE * in, char lines[][LINELEN + 1], int * num_lines)
         strcpy(lines[line_count++], line);
     }
     /* store how many lines have been read */
-    num_lines = &line_count;
+    *num_lines = line_count;
     return TRUE;
 }
 
